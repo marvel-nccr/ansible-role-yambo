@@ -33,6 +33,7 @@
     src: "{{ yambo_download.dest }}"
     dest: "{{ yambo_code_folder }}"
     remote_src: True
+  when: yambo_download.changed
 
 # Note: use ./configure --with-p2y-version=qexsd for QE 6.2 or higher with new xml schema
 # See https://github.com/marvel-nccr/marvel-virtualmachine/issues/34
