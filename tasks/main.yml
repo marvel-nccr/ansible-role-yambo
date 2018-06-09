@@ -47,7 +47,7 @@
   shell: "make {{ item.name }}"
   args:
     chdir: "{{ yambo_topdir }}"
-    creates: "{{ yambo_topdir }}/bin/{{ item }}"
+    creates: "{{ yambo_topdir }}/bin/{{ item.name }}"
   with_items: "{{ yambo_executables }}"
 
 - name: "Put a line in ~/.profile to add Yambo to the path"
