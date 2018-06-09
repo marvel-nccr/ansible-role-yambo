@@ -44,7 +44,7 @@
     creates: "{{ yambo_topdir }}/Makefile"
 
 - name: Make Yambo executables
-  shell: "make {{ item }}"
+  shell: "make {{ item.name }}"
   args:
     chdir: "{{ yambo_topdir }}"
     creates: "{{ yambo_topdir }}/bin/{{ item }}"

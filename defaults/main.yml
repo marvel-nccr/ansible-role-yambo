@@ -5,8 +5,13 @@ yambo_code_folder: "${HOME}"
 yambo_url: "https://github.com/yambo-code/yambo/archive/{{ yambo_version }}.tar.gz"
 yambo_topdir: "{{ yambo_code_folder }}/{{yambo_src}}"
 yambo_executables:
-  - yambo
-  - p2y
-  - ypp
+- name: yambo
+  folder: "{{ yambo_topdir }}/bin"
+  plugin: yambo.yambo
+- name: p2y
+  folder: "{{ yambo_topdir }}/bin"
+  plugin: yambo.yambo
+- name: ypp
+  folder: "{{ yambo_topdir }}/bin"
 
 root_user: root
