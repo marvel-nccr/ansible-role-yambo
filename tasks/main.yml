@@ -5,21 +5,19 @@
   become: true
   become_user: "{{ root_user }}"
   apt:
-      name: "{{ item }}"
-      state: latest
-  with_items:
-    - build-essential
-    - gfortran
-    - openmpi-common
-    - openmpi-bin
-    - libopenmpi-dev
-    - libfftw3-dev
-    - libfftw3-bin
-    - libfftw3-mpi-dev
-    - liblapack-dev
-    - libblas-dev
-    - m4
-    - wget
+    name:
+      - build-essential
+      - gfortran
+      - openmpi-common
+      - openmpi-bin
+      - libopenmpi-dev
+      - libfftw3-dev
+      - libfftw3-bin
+      - libfftw3-mpi-dev
+      - liblapack-dev
+      - libblas-dev
+      - m4
+      - wget
 
 # Will only download once
 - name: Get Yambo
