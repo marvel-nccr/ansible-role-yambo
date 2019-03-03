@@ -1,16 +1,17 @@
 ---
-allow_duplicates: no
+allow_duplicates: false
 
 galaxy_info:
+  role_name: yambo
   author: "MARVEL NCCR"
   description: "An ansible role that installs [yambo](http://www.yambo-code.org/) on Ubuntu."
   license: MIT
-  min_ansible_version: 2.5
+  min_ansible_version: 2.7
   platforms:
     - name: Ubuntu
       versions:
-      - xenial
-      - bionic
+        - xenial
+        - bionic
   galaxy_tags:
     - ubuntu
     - application

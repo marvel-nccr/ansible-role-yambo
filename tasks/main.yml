@@ -21,7 +21,7 @@
 
 # Will only download once
 - name: Get Yambo
-  get_url: 
+  get_url:
     url: "{{ yambo_url }}"
     dest: "{{ yambo_code_folder }}/{{ yambo_src_archive }}"
   register: yambo_download
@@ -30,19 +30,19 @@
   unarchive:
     src: "{{ yambo_download.dest }}"
     dest: "{{ yambo_code_folder }}"
-    remote_src: True
+    remote_src: true
   when: yambo_download.changed
 
 # Note: use ./configure --with-p2y-version=qexsd for QE 6.2 or higher with new xml schema
 # See https://github.com/marvel-nccr/marvel-virtualmachine/issues/34
 - name: Configure Yambo
-  shell: ./configure 
+  command: ./configure
   args:
     chdir: "{{ yambo_topdir }}"
     creates: "{{ yambo_topdir }}/Makefile"
 
 - name: Make Yambo executables
-  shell: "make {{ item.name }}"
+  command: "make {{ item.name }}"
   args:
     chdir: "{{ yambo_topdir }}"
     creates: "{{ yambo_topdir }}/bin/{{ item.name }}"
