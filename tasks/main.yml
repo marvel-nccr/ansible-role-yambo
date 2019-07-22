@@ -3,7 +3,6 @@
 # http://www.yambo-code.org/download/compiling.php
 - name: Install required packages
   become: true
-  become_user: "{{ root_user }}"
   apt:
     name:
       - build-essential
@@ -48,10 +47,15 @@
     creates: "{{ yambo_topdir }}/bin/{{ item.name }}"
   with_items: "{{ yambo_executables }}"
 
-- name: "Put a line in ~/.profile to add Yambo to the path"
-  lineinfile:
-    path: "${HOME}/.profile"
-    line: "export PATH=${PATH}:{{ yambo_topdir }}/bin"
+- name: Install yambo executables
+  become: true
+  copy:
+    src: "{{ yambo_topdir }}/bin/{{ item.name }}"
+    dest: "{{ item.folder }}/"
+    remote_src: true
+    mode: '0755'
+  with_items: "{{ yambo_executables }}"
+  register: yambo_install
 
 - include_role:
     name: release_notes
