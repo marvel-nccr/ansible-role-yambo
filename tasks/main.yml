@@ -71,6 +71,6 @@
     section: "Yambo"
     option: "usage"
     value: >-
-       Yambo is compiled and installed in {{ yambo_topdir }}.
+       Yambo is compiled and installed in {{ yambo_prefix }}.
        Simply run 'yambo'.
   when: release_notes is defined and release_notes
