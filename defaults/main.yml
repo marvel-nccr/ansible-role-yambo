@@ -1,5 +1,5 @@
 ---
-yambo_version: "4.5.1"
+yambo_version: "4.5.2"
 yambo_src: yambo-{{ yambo_version }}
 yambo_src_archive: "{{ yambo_src }}.tar.gz"
 yambo_code_folder: "/tmp"
