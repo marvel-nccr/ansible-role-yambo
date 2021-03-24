@@ -10,8 +10,11 @@ yambo_executables:
   - name: yambo
     folder: "{{ yambo_prefix }}/bin"
     plugin: yambo.yambo
+    version: "{{ yambo_version }}"
   - name: p2y
     folder: "{{ yambo_prefix }}/bin"
     plugin: yambo.yambo
+    version: "{{ yambo_version }}"
   - name: ypp
     folder: "{{ yambo_prefix }}/bin"
+    version: "{{ yambo_version }}"
