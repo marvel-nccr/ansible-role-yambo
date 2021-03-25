@@ -1,4 +1,3 @@
----
 yambo_version: "4.5.2"
 yambo_src: yambo-{{ yambo_version }}
 yambo_src_archive: "{{ yambo_src }}.tar.gz"
@@ -7,14 +6,14 @@ yambo_prefix: "/usr/local"
 yambo_url: "https://github.com/yambo-code/yambo/archive/{{ yambo_version }}.tar.gz"
 yambo_topdir: "{{ yambo_code_folder }}/{{yambo_src}}"
 yambo_executables:
-  - name: yambo
-    folder: "{{ yambo_prefix }}/bin"
-    plugin: yambo.yambo
-    version: "{{ yambo_version }}"
-  - name: p2y
-    folder: "{{ yambo_prefix }}/bin"
-    plugin: yambo.yambo
-    version: "{{ yambo_version }}"
-  - name: ypp
-    folder: "{{ yambo_prefix }}/bin"
-    version: "{{ yambo_version }}"
+- name: yambo
+  folder: "{{ yambo_prefix }}/bin"
+  plugin: yambo.yambo
+  version: "{{ yambo_version }}"
+- name: p2y
+  folder: "{{ yambo_prefix }}/bin"
+  plugin: yambo.yambo
+  version: "{{ yambo_version }}"
+- name: ypp
+  folder: "{{ yambo_prefix }}/bin"
+  version: "{{ yambo_version }}"

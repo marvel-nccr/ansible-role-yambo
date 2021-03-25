@@ -1,22 +1,21 @@
----
 # TODO optimize configure step (fftw, netcdf, hdf5, ...), see
 # http://www.yambo-code.org/download/compiling.php
 - name: Install required packages
   become: true
   apt:
     name:
-      - build-essential
-      - gfortran
-      - openmpi-common
-      - openmpi-bin
-      - libopenmpi-dev
-      - libfftw3-dev
-      - libfftw3-bin
-      - libfftw3-mpi-dev
-      - liblapack-dev
-      - libblas-dev
-      - m4
-      - wget
+    - build-essential
+    - gfortran
+    - openmpi-common
+    - openmpi-bin
+    - libopenmpi-dev
+    - libfftw3-dev
+    - libfftw3-bin
+    - libfftw3-mpi-dev
+    - liblapack-dev
+    - libblas-dev
+    - m4
+    - wget
 
 # Will only download once
 - name: Get Yambo
@@ -71,6 +70,6 @@
     section: "Yambo"
     option: "usage"
     value: >-
-       Yambo is compiled and installed in {{ yambo_prefix }}.
-       Simply run 'yambo'.
+      Yambo is compiled and installed in {{ yambo_prefix }}.
+      Simply run 'yambo'.
   when: release_notes is defined and release_notes
